@@ -11,6 +11,9 @@ endif()
 
 project ("CMakeProjekt3")
 
+#add_subdirectory(pybind11)
+#pybind11_add_module(cmake_example src/main.cpp)
+
 # Add source to this project's executable.
 add_executable (CMakeProjekt3 "CMakeProjekt3.cpp" "CMakeProjekt3.h")
 
