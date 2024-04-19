@@ -4,6 +4,4 @@ Zadania:
 2. Filtracja 1D i 2D
 3. Generowanie sygna³ow o zadanej czestotliwosci (sin,cos, prostokotny, pilokrztaltny)
 
-*rozmycie gaussa
-*zaszumienie sygnalu
-*wykrywanie peaku w sygnale
+*liczenie autokorelacji sygna³u

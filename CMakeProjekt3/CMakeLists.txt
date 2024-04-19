@@ -17,6 +17,9 @@ project ("CMakeProjekt3")
 # Add source to this project's executable.
 add_executable (CMakeProjekt3 "CMakeProjekt3.cpp" "CMakeProjekt3.h")
 
+set(CMAKE_TOOLCHAIN_FILE "${CMAKE_CURRENT_SOURCE_DIR}/vcpkg/scripts/buildsystems/vcpkg.cmake"
+  CACHE STRING "Vcpkg toolchain file")
+
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeProjekt3 PROPERTY CXX_STANDARD 20)
 endif()
