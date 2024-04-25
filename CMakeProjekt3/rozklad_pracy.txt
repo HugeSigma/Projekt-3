@@ -1,7 +1,0 @@
-Zadania:
-
-1. wizualizacja sygna³u z wykorzystaniem bibliotki matplotplusplus
-2. Filtracja 1D i 2D
-3. Generowanie sygna³ow o zadanej czestotliwosci (sin,cos, prostokotny, pilokrztaltny)
-
-*liczenie autokorelacji sygna³u
