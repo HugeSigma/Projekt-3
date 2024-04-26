@@ -7,31 +7,42 @@
 namespace mp = matplot;
 namespace py = pybind11;
 
-int add(int i, int j) {
-    return i + j;
-}
-int subtract(int i, int j) {
-    return i - j;
-}
-int multiply(int i, int j) {
-    return i * j;
-}
-int divide(int i, int j) {
-    return i/ j;
-}
-std::vector<double> funkcja()
+const int precision = 10;
+
+std::vector<double> sinus(double f, double time) //f - czestotliwosc
 {
-    std::vector<double> x = mp::linspace(0, 10, 100);
-    std::vector<double> y = mp::transform(x, [](auto x) { return sin(x); });
+    std::vector<double> x = mp::linspace(0, time, time*precision);
+    std::vector<double> y = mp::transform(x, [&](auto x) { return sin(f*x); });
     mp::plot(x, y);
+    mp::xlabel("t_{s}");
+    mp::ylabel("value");
     mp::show();
     return y;
 }
+std::vector<double> cosinus(double f, double time) //f - czestotliwosc
+{
+    std::vector<double> x = mp::linspace(0, time, time*precision);
+    std::vector<double> y = mp::transform(x, [&](auto x) { return cos(f*x); });
+    mp::plot(x, y);
+    mp::xlabel("t_{s}");
+    mp::ylabel("value");
+    mp::show();
+    return y;
+}
+//std::vector<double> prostokatny(double f, double time, double max_value = 1) //f - czestotliwosc
+//{
+//    std::vector<double> x = mp::linspace(0, time, time * precision);
+//    std::vector<double> y = mp::transform(x, [&](auto x) { return ((x*2*max_value+1)2 - 1); });
+//    mp::plot(x, y);
+//    mp::xlabel("t_{s}");
+//    mp::ylabel("value");
+//    mp::show();
+//    return y;
+//}
+
 
 PYBIND11_MODULE(cmake_example, m) {
-    m.def("add", &add);
-    m.def("multiply", &multiply);
-    m.def("divide", &divide);
-    m.def("subtract", &subtract);
-    m.def("funkcja", &funkcja);
+    m.def("sinus", &sinus);
+    m.def("cosinus", &cosinus);
+   // m.def("prostokatny", &prostokatny);
 }
