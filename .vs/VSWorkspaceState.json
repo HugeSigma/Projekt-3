@@ -1,10 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\cmake_example\\src",
     "\\cmake_example_1",
     "\\cmake_example_1\\src"
   ],
-  "SelectedNode": "\\cmake_example_1\\CMakeLists.txt",
+  "SelectedNode": "\\cmake_example_1\\module1.py",
   "PreviewInSolutionExplorer": false
 }
