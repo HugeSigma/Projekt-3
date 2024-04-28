@@ -1,6 +1,6 @@
-int dupa= = decltype
-int dupa2 + 12
-kubabuba
-dynamic_castdsa
-gf __STDCPP_DEFAULT_NEW_ALIGNMENT__
-sdf
+#include <iostream>
+int main ()
+{
+    int x = 2;
+    std::cout << "hello world";
+}
