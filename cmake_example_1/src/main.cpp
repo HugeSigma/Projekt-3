@@ -32,7 +32,7 @@ std::vector<double> cosinus(double f, double time) //f - czestotliwosc
 std::vector<double> pila(double f, double time, double max_value = 1) //f - czestotliwosc
 {
     std::vector<double> x = mp::linspace(0, time, time * precision);
-    std::vector<double> y = mp::transform(x, [&](auto x) { return max_value*(x - floor(x)); });
+    std::vector<double> y = mp::transform(x, [&](auto x) { return ((x*f+0.5 - floor(x*f+0.5))*2*max_value - max_value); });
     mp::plot(x, y);
     mp::xlabel("t_{s}");
     mp::ylabel("value");
@@ -43,7 +43,7 @@ std::vector<double> pila(double f, double time, double max_value = 1) //f - czes
 std::vector<double> prostokatny(double f, double time, double max_value = 1) //f - czestotliwosc
 {
     std::vector<double> x = mp::linspace(0, time, time * precision);
-    std::vector<double> y = mp::transform(x, [&](auto x) { return ((x - floor(x)) > 0 ? max_value : 0 - max_value); });
+    std::vector<double> y = mp::transform(x, [&](auto x) { return ((x * f + 0.5 - floor(x * f + 0.5)) * 2 * max_value - max_value) > 0 ? max_value : 0 - max_value); });
     mp::plot(x, y);
     mp::xlabel("t_{s}");
     mp::ylabel("value");
