@@ -7,11 +7,11 @@
 namespace mp = matplot;
 namespace py = pybind11;
 
-const int precision = 10;
+const int f_probkowania = 48;
 
 std::vector<double> sinus(double f, double time) //f - czestotliwosc
 {
-    std::vector<double> x = mp::linspace(0, time, time*precision);
+    std::vector<double> x = mp::linspace(0, time, time*f_probkowania);
     std::vector<double> y = mp::transform(x, [&](auto x) { return sin(f*x); });
     mp::plot(x, y);
     mp::xlabel("t_{s}");
@@ -21,7 +21,7 @@ std::vector<double> sinus(double f, double time) //f - czestotliwosc
 }
 std::vector<double> cosinus(double f, double time) //f - czestotliwosc
 {
-    std::vector<double> x = mp::linspace(0, time, time*precision);
+    std::vector<double> x = mp::linspace(0, time, time*f_probkowania);
     std::vector<double> y = mp::transform(x, [&](auto x) { return cos(f*x); });
     mp::plot(x, y);
     mp::xlabel("t_{s}");
@@ -31,7 +31,7 @@ std::vector<double> cosinus(double f, double time) //f - czestotliwosc
 }
 std::vector<double> pila(double f, double time, double max_value = 1) //f - czestotliwosc
 {
-    std::vector<double> x = mp::linspace(0, time, time * precision);
+    std::vector<double> x = mp::linspace(0, time, time * f_probkowania);
     std::vector<double> y = mp::transform(x, [&](auto x) { return ((x*f+0.5 - floor(x*f+0.5))*2*max_value - max_value); });
     mp::plot(x, y);
     mp::xlabel("t_{s}");
@@ -42,7 +42,7 @@ std::vector<double> pila(double f, double time, double max_value = 1) //f - czes
 
 std::vector<double> prostokatny(double f, double time, double max_value = 1) //f - czestotliwosc
 {
-    std::vector<double> x = mp::linspace(0, time, time * precision);
+    std::vector<double> x = mp::linspace(0, time, time * f_probkowania);
     std::vector<double> y = mp::transform(x, [&](auto x) { return (((x * f + 0.5 - floor(x * f + 0.5)) * 2 * max_value - max_value) > 0 ? max_value : 0 - max_value); });
     mp::plot(x, y);
     mp::xlabel("t_{s}");
