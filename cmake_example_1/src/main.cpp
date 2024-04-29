@@ -3,6 +3,7 @@
 #include <vector>
 #include <matplot/matplot.h>
 #include <cmath>
+#include <AudioFile.h>
 
 namespace mp = matplot;
 namespace py = pybind11;

@@ -2,6 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\cmake_example_1",
+    "\\cmake_example_1\\matplotplusplus\\source",
+    "\\cmake_example_1\\matplotplusplus\\source\\matplot",
+    "\\cmake_example_1\\pybind11\\include\\pybind11",
     "\\cmake_example_1\\src"
   ],
   "SelectedNode": "\\cmake_example_1\\module1.py",
