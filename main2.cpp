@@ -41,7 +41,7 @@ std::vector<double> krzywa_gaussa(double sigma, int czas)
 
 #include <opencv2/opencv.hpp>
 
-int main() {
+int Blurrowanie_Zdjec() {
     //ładujesz zdjecia jak plik
     cv::Mat zdjecie = cv::imread("nazwa_zdjecia.jpg"); //Mat to jest macierz zdjecia zamaist vectora lub tablicy
 
