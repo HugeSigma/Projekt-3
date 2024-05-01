@@ -38,3 +38,27 @@ std::vector<double> krzywa_gaussa(double sigma, int czas)
 
     return kernel;
 }
+
+#include <opencv2/opencv.hpp>
+
+int main() {
+    //ładujesz zdjecia jak plik
+    cv::Mat zdjecie = cv::imread("nazwa_zdjecia.jpg"); //Mat to jest macierz zdjecia zamaist vectora lub tablicy
+
+    if (image.empty())
+    {
+        std::cout << "Dupa nie zdjecie." << std::endl;
+        return -1;
+    }
+
+    // Funkcja co robi blurr 
+    cv::Mat zmienione_zdjecie;
+    cv::GaussianBlur(image, blurred_image, cv::Size(5, 5), 0); // Kernel i sigma podajemy 5,5 0 jest standardem i jest podane na stronie docs.opencv
+
+    // pokazuje oba zdjecia
+    cv::imshow("Zdjecie Przed", zdjecie);
+    cv::imshow("Zdjecie Po", zmienione_zdjecie);
+    cv::waitKey(0);
+
+    return 0;
+}
