@@ -53,7 +53,7 @@ int main() {
 
     // Funkcja co robi blurr 
     cv::Mat zmienione_zdjecie;
-    cv::GaussianBlur(image, blurred_image, cv::Size(5, 5), 0); // Kernel i sigma podajemy 5,5 0 jest standardem i jest podane na stronie docs.opencv
+    cv::GaussianBlur(image, zmienione_zdjecie, cv::Size(5, 5), 0); // Kernel i sigma podajemy 5,5 0 jest standardem i jest podane na stronie docs.opencv
 
     // pokazuje oba zdjecia
     cv::imshow("Zdjecie Przed", zdjecie);
